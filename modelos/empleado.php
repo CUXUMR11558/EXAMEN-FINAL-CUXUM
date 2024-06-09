@@ -23,7 +23,7 @@ class Empleado extends Conexion{
 
     // METODO PARA INSERTAR
     public function guardar(){
-        $sql = "INSERT into clientes (cli_nombre, cli_apellido, cli_nit, cli_telefono) values ('$this->emp_nombre','$this->emp_apellido','$this->emp_nit','$this->emp_telefono')";
+        $sql = "INSERT into empleado (emp_nombre, emp_apellido, emp_nit, emp_telefono) values ('$this->emp_nombre','$this->emp_apellido','$this->emp_nit','$this->emp_telefono')";
         $resultado = $this->ejecutar($sql);
         return $resultado; 
     }

@@ -55,21 +55,6 @@
     }
 
 
-    // $alerta = 'success';
-
-    // switch ($resultado['codigo']) {
-    //     case 0:
-    //         $alerta = 'danger';
-    //         break;
-    //     case 1:
-    //         $alerta = 'success';
-    //         break;
-    //     case 2:
-    //         $alerta = 'warning';
-    //         break;
-    // }
-
-
     $alertas = ['danger', 'success', 'warning'];
 
     
