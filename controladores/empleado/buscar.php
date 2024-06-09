@@ -2,13 +2,14 @@
 
 <?php
     //  ini_set('display_errors', '1');
-    //  ini_set('display_startup_errors', '1');
-    //  error_reporting(E_ALL);
+    //   ini_set('display_startup_errors', '1');
+    //   error_reporting(E_ALL);
     require '../../modelos/empleado.php';
 
     // consulta
     try {
-        var_dump($_GET);
+       //var_dump($_GET);
+
         $_GET['emp_nombre'] = htmlspecialchars( $_GET['emp_nombre']);
         $_GET['emp_apellido'] = htmlspecialchars( $_GET['emp_apellido']);
         $_GET['emp_edad'] = htmlspecialchars( $_GET['emp_edad']);
@@ -22,7 +23,7 @@
             'datos' => $clientes,
             'codigo' => 1
         ];
-        // var_dump($productos);
+         //var_dump($clientes);
         
     } catch (Exception $e) {
         $resultado = [
@@ -30,6 +31,7 @@
             'detalle' => $e->getMessage(),
             'codigo' => 0
         ];
+     
     }       
 
 
@@ -79,8 +81,8 @@
                                         Acciones
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="../..//vistas/empleado/modificar.php?emp_codigo=<?= base64_encode($cliente['emp_codigo'])?>"><i class="bi bi-pencil-square me-2"></i>Modificar</a></li>
-                                        <li><a class="dropdown-item" href="#"><i class="bi bi-trash me-2"></i>Eliminar</a></li>
+                                        <li><a class="dropdown-item" href="../../vistas/empleado/modificar.php?emp_codigo=<?= base64_encode($cliente['emp_codigo'])?>"><i class="bi bi-pencil-square me-2"></i>Modificar</a></li>
+                                        <li><a class="dropdown-item" href="../../controladores/empleado/eliminar.php?emp_codigo=<?= base64_encode($cliente['emp_codigo'])?>"><i class="bi bi-trash me-2"></i>Eliminar</a></li>
                                     </ul>
                                 </div>
 
