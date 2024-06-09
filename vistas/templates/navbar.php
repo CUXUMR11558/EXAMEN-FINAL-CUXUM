@@ -19,8 +19,8 @@
             <i class="bi bi-boxes me-2"></i>EMPLEADO
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/crud_2024/vistas/ventas/index.php"><i class="bi bi-plus-circle me-2"></i>Ingresar Empleado</a></li>
-            <li><a class="dropdown-item" href="/crud_2024/vistas/ventas/buscar.php"><i class="bi bi-search me-2"></i>Buscar</a></li>
+            <li><a class="dropdown-item" href="../../vistas/empleado/index.php"><i class="bi bi-plus-circle me-2"></i>Ingresar Empleado</a></li>
+            <li><a class="dropdown-item" href="../../vistas/empleado/buscar.php"><i class="bi bi-search me-2"></i>Buscar</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -28,8 +28,8 @@
             <i class="bi bi-boxes me-2"></i>puesto
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/crud_2024/vistas/producto/index.php"><i class="bi bi-plus-circle me-2"></i>Crear puesto</a></li>
-            <li><a class="dropdown-item" href="/crud_2024/vistas/producto/buscar.php"><i class="bi bi-search me-2"></i>Buscar</a></li>
+            <li><a class="dropdown-item" href=""><i class="bi bi-plus-circle me-2"></i>Crear puesto</a></li>
+            <li><a class="dropdown-item" href=""><i class="bi bi-search me-2"></i>Buscar</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -37,8 +37,8 @@
             <i class="bi bi-people me-2"></i>AREA
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/crud_2024/vistas/cliente/index.php"><i class="bi bi-plus-circle me-2"></i>Crear</a></li>
-            <li><a class="dropdown-item" href="/crud_2024/vistas/cliente/buscar.php"><i class="bi bi-search me-2"></i>Buscar</a></li>
+            <li><a class="dropdown-item" href=""><i class="bi bi-plus-circle me-2"></i>Crear</a></li>
+            <li><a class="dropdown-item" href=""><i class="bi bi-search me-2"></i>Buscar</a></li>
           </ul>
         </li>
     </div>

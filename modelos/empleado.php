@@ -27,6 +27,28 @@ class Empleado extends Conexion{
         $resultado = $this->ejecutar($sql);
         return $resultado; 
     }
+
+      // METODO PARA CONSULTAR
+
+    public function buscar(...$columnas){
+        $cols = count($columnas) > 0 ? implode(',', $columnas) : '*';
+        $sql = "SELECT $cols FROM empleado where emp_situacion = 1 ";
+
+        if($this->emp_nombre != ''){
+            $sql .= " AND emp_nombre like '%$this->emp_nombre%' ";
+        }
+        if($this->emp_apellido != ''){
+            $sql .= " AND emp_apellido like '%$this->emp_apellido%' ";
+        }
+        if($this->emp_nit != ''){
+            $sql .= " AND emp_nit like '%$this->emp_nit%' ";
+        }
+        if($this->emp_telefono != ''){
+            $sql .= " AND emp_telefono like '%$this->emp_telefono%' ";
+        }
+        $resultado = self::servir($sql);
+        return $resultado;
+    }
     
     
     
