@@ -15,7 +15,7 @@ create table empleado (
 create table puesto (
     pue_codigo serial,
     pue_nombre varchar (50) not null,
-    pue_observacion varchar (50)not null,
+    pue_sueldo integer,
     pue_situacion smallint default 1,
     primary key (pue_codigo)
 )

@@ -1,21 +1,17 @@
 <?php 
-     ini_set('display_errors', '1');
-     ini_set('display_startup_errors', '1');
-     error_reporting(E_ALL);
-    require '../../modelos/empleado.php';
+    //  ini_set('display_errors', '1');
+    //  ini_set('display_startup_errors', '1');
+    //  error_reporting(E_ALL);
+    require '../../modelos/puesto.php';
     require '../../includes/funciones.php';
     
     $mensaje = '';
     // VALIDAR INFORMACION
-    $_POST['emp_nombre'] = htmlspecialchars( $_POST['emp_nombre']);
-    $_POST['emp_apellido'] = htmlspecialchars( $_POST['emp_apellido']);
-    $_POST['emp_edad'] = htmlspecialchars( $_POST['emp_edad']);
-    $_POST['emp_sexo'] = htmlspecialchars( $_POST['emp_sexo']);
-    $_POST['emp_nit'] = htmlspecialchars( $_POST['emp_nit']);
-    $_POST['emp_telefono'] = filter_var( $_POST['emp_telefono'] , FILTER_SANITIZE_NUMBER_INT);
+    $_POST['pue_nombre'] = htmlspecialchars( $_POST['pue_nombre']);
+    $_POST['pue_sueldo'] = filter_var( $precio , FILTER_VALIDATE_FLOAT) ;
     
     
-    if($_POST['emp_nombre'] == '' || $_POST['emp_apellido'] == '' || $_POST['emp_edad'] == '' || $_POST['emp_sexo'] == '' || $_POST['emp_nit'] == '' || $_POST['emp_telefono'] == '' || strlen($_POST['emp_telefono']) < 8){
+    if($_POST['pue_nombre'] == '' || !$_POST['pue_sueldo'] || $_POST['pue_sueldo'] < 0){
         // ALERTA PARA VALIDAR DATOS
         $resultado = [
             'mensaje' => 'DEBE VALIDAR LOS DATOS',
@@ -23,14 +19,14 @@
         ];
     }else{
 
-        if(validarNIT($_POST['emp_nit'])){
+       
 
             try {
                 // REALIZAR CONSULTA
-                $cliente = new Empleado($_POST);
+                $cliente = new puesto($_POST);
                 $guardar = $cliente->guardar();
                 $resultado = [
-                    'mensaje' => 'EMPLEADO INSERTADO CORRECTAMENTE',
+                    'mensaje' => 'PUESTO INSERTADO CORRECTAMENTE',
                     'codigo' => 1
                 ];
                 
@@ -47,12 +43,7 @@
                     'codigo' => 0
                 ];
             }
-        }else{
-            $resultado = [
-                'mensaje' => 'NIT INVALIDO',
-                'codigo' => 2
-            ];
-        }
+        
         
     }
 
@@ -69,7 +60,7 @@
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-6">
-            <a href="../../vistas/empleado/index.php" class="btn btn-primary w-100">Volver al formulario</a>
+            <a href="../../vistas/puesto/index.php" class="btn btn-primary w-100">Volver al formulario</a>
         </div>
     </div>
 
