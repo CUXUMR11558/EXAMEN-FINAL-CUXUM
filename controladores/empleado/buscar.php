@@ -11,6 +11,8 @@
         var_dump($_GET);
         $_GET['emp_nombre'] = htmlspecialchars( $_GET['emp_nombre']);
         $_GET['emp_apellido'] = htmlspecialchars( $_GET['emp_apellido']);
+        $_GET['emp_edad'] = htmlspecialchars( $_GET['emp_edad']);
+        $_GET['emp_sexo'] = htmlspecialchars( $_GET['emp_sexo']);
         $_GET['emp_nit'] = htmlspecialchars( $_GET['emp_nit']);
         $_GET['emp_telefono'] = filter_var( $_GET['emp_telefono'] , FILTER_SANITIZE_NUMBER_INT);
         $objCliente = new Empleado($_GET);
@@ -54,6 +56,8 @@
                     <tr>
                         <th>No.</th>
                         <th>Nombre</th>
+                        <th>edad</th>
+                        <th>sexo</th>
                         <th>NIT</th>
                         <th>Teléfono</th>
                         <th>Acciones</th>
@@ -65,6 +69,8 @@
                             <tr>
                                 <td><?= $key + 1?></td>
                                 <td><?= $cliente['emp_nombre'] . " " . $cliente['emp_apellido'] ?></td>
+                                <td><?= $cliente['emp_edad'] ?></td>
+                                <td><?= $cliente['emp_sexo'] ?></td>
                                 <td><?= $cliente['emp_nit'] ?></td>
                                 <td><?= $cliente['emp_telefono'] ?></td>
                                 <td class="text-center">
@@ -73,7 +79,7 @@
                                         Acciones
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="#"><i class="bi bi-pencil-square me-2"></i>Modificar</a></li>
+                                        <li><a class="dropdown-item" href="../..//vistas/empleado/modificar.php?emp_codigo=<?= base64_encode($cliente['emp_codigo'])?>"><i class="bi bi-pencil-square me-2"></i>Modificar</a></li>
                                         <li><a class="dropdown-item" href="#"><i class="bi bi-trash me-2"></i>Eliminar</a></li>
                                     </ul>
                                 </div>

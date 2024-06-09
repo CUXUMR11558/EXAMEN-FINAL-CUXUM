@@ -4,6 +4,8 @@ create table empleado (
     emp_codigo serial,
     emp_nombre varchar (50)not null,
     emp_apellido varchar (50)not null,
+    emp_edad integer,
+    emp_sexo varchar (50)not null,
     emp_nit varchar (50),
     emp_telefono integer,
     emp_situacion smallint default 1,
