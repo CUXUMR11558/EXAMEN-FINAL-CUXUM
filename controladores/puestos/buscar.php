@@ -72,7 +72,7 @@
                                         Acciones
                                     </button>
                                     <ul class="dropdown-menu">
-                                        <li><a class="dropdown-item" href="../../vistas/empleado/modificar.php?emp_codigo=<?= base64_encode($cliente['emp_codigo'])?>"><i class="bi bi-pencil-square me-2"></i>Modificar</a></li>
+                                        <li><a class="dropdown-item" href="../../vistas/puesto/modificar.php?pue_codigo=<?= base64_encode($cliente['pue_codigo'])?>"><i class="bi bi-pencil-square me-2"></i>Modificar</a></li>
                                         <li><a class="dropdown-item" href="../../controladores/empleado/eliminar.php?emp_codigo=<?= base64_encode($cliente['emp_codigo'])?>"><i class="bi bi-trash me-2"></i>Eliminar</a></li>
                                     </ul>
                                 </div>
