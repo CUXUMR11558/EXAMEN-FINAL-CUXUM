@@ -14,7 +14,7 @@ class Puesto extends Conexion{
     {
         $this->pue_codigo = $args['pue_codigo'] ?? null;
         $this->pue_nombre = $args['pue_nombre'] ?? '';
-        $this->pue_sueldo = $args['pue_sueldo'] ?? '';
+        $this->pue_sueldo = $args['pue_sueldo'] ?? 0.00;
         $this->pue_situacion = $args['pues_situacion'] ?? 1;
     }
 

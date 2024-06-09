@@ -62,7 +62,7 @@ if($_POST['emp_nombre'] == '' || !$_POST['emp_apellido'] || $_POST['emp_nit'] ==
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-6">
-            <a href="../../vistas/empleado/index.php" class="btn btn-primary w-100">Volver al formulario</a>
+            <a href="../../vistas/empleado/buscar.php" class="btn btn-primary w-100">Volver al formulario</a>
         </div>
     </div>
 

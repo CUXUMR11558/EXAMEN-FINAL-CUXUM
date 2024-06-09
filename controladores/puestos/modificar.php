@@ -3,17 +3,14 @@
 
 
 
-
-
-
 <?php
 
-require '../../modelos/empleado.php';
+require '../../modelos/puesto.php';
 //echo var_dump($_POST);
 $_POST['pue_nombre'] = htmlspecialchars( $_POST['pue_nombre']);
-$_POST['pue_sueldo'] = filter_var( $precio , FILTER_VALIDATE_FLOAT) ;
+$_POST['pue_sueldo'] = filter_var($_POST['pue_sueldo'] , FILTER_VALIDATE_FLOAT) ;
 
-if($_POST['pue_nombre'] == '' || !$_POST['pue_sueldo'] || $_POST['pue_sueldo'] < 0){
+if($_POST['pue_nombre'] == '' || $_POST['pue_sueldo'] < 0){
     // ALERTA PARA VALIDAR DATOS
     $resultado = [
         'mensaje' => 'LLENAR FORMULARIO ',
