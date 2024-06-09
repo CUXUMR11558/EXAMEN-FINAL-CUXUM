@@ -37,8 +37,8 @@
             <i class="bi bi-people me-2"></i>AREA
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href=""><i class="bi bi-plus-circle me-2"></i>Crear</a></li>
-            <li><a class="dropdown-item" href=""><i class="bi bi-search me-2"></i>Buscar</a></li>
+            <li><a class="dropdown-item" href="../../vistas/area/index.php"><i class="bi bi-plus-circle me-2"></i>Crear</a></li>
+            <li><a class="dropdown-item" href="../../vistas/area/buscar.php"><i class="bi bi-search me-2"></i>Buscar</a></li>
           </ul>
         </li>
     </div>
