@@ -36,6 +36,18 @@
         </div>
         <div class="row mb-3">
             <div class="col">
+                <label for="cli_nit">Edad del Empleado</label>
+                <input type="number" name="emp_edad" id="emp_edad" step="1" class="form-control" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <label for="cli_telefono">Sexo del Empleado</label>
+                <input type="text" name="emp_sexo" id="emp_sexo" step="1" class="form-control" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
                 <label for="cli_nit">NIT del Enpleado</label>
                 <input type="number" name="emp_nit" id="emp_nit" step="1" class="form-control" >
             </div>
