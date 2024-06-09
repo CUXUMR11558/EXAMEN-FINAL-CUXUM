@@ -29,7 +29,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <a href="../../controladores/puestos/guardar.php" class="btn btn-info w-100">BUSCAR</a>
+                <a href="../../controladores/puestos/buscar.php" class="btn btn-info w-100">BUSCAR</a>
             </div>
         </div>
     </form>

@@ -2,7 +2,7 @@
 
 require_once 'Conexion.php';
 
-class puesto extends Conexion{
+class Puesto extends Conexion{
     public $pue_codigo;
     public $pue_nombre;
     public $pue_sueldo;
