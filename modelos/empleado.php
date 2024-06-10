@@ -56,7 +56,8 @@ class Empleado extends Conexion
     public function buscar(...$columnas)
     {
         $cols = count($columnas) > 0 ? implode(',', $columnas) : '*';
-        $sql = "SELECT $cols FROM empleado where emp_situacion = 1 ";
+        $sql = "SELECT $cols FROM empleado
+        inner join puesto on emp_puesto = pue_codigo where emp_situacion = 1 ";
 
         if ($this->emp_nombre != '') {
             $sql .= " AND emp_nombre like '%$this->emp_nombre%' ";
@@ -79,6 +80,8 @@ class Empleado extends Conexion
         if ($this->emp_telefono != '') {
             $sql .= " AND emp_telefono = $this->emp_telefono ";
         }
+
+      
         $resultado = self::servir($sql);
         return $resultado;
     }

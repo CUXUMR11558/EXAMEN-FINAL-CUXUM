@@ -30,3 +30,20 @@ create table area (
     are_situacion smallint default 1,
     primary key (are_codigo)
 )
+
+create table asignacion_area (
+    asig_codigo serial,
+    asig_empleado int,
+    asig_area int,
+    asig_situacion smallint default 1,
+    primary key (asig_codigo),
+    FOREIGN KEY (asig_empleado) REFERENCES empleado (emp_codigo),
+    FOREIGN KEY (asig_area) REFERENCES area (are_codigo)
+)
+
+
+
+
+
+
+SELECT * FROM empleado inner join puesto on emp_puesto = pue_codigo where emp_situacion = 1

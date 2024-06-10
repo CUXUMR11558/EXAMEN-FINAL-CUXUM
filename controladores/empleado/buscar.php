@@ -86,7 +86,7 @@
                                 <td><?= $cliente['emp_sexo'] ?></td>
                                 <td><?= $cliente['emp_nit'] ?></td>
                                 <td><?= $cliente['emp_telefono'] ?></td>
-                                <td><?= $cliente['emp_puesto'] ?></td>
+                                <td><?= $cliente['pue_nombre'] ?></td>
                                 <td class="text-center">
                                 <div class="dropdown">
                                     <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
