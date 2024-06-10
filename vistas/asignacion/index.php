@@ -35,7 +35,7 @@ $areas = $area->buscar();
         <div class="row mb-3">
             <div class="col">
                 <label for="asig_area"></label>
-                <select name="asig_area" id="asig_area" class="form-control" required>
+                <select name="asig_area" id="asig_area" class="form-control">
                     <option value="">SELECCIONE...</option>
                     <?php foreach ($areas as $area) : ?>
                         <option value="<?= $area['are_codigo'] ?>"> <?= $area['are_nombre'] ?></option>

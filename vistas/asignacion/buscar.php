@@ -1,4 +1,17 @@
 
+<?php
+
+require '../../modelos/area.php';
+require '../../modelos/empleado.php';
+$empleado = new Empleado($_GET);
+$empleados = $empleado->buscar();
+
+$area = new Area($_GET);
+$areas = $area->buscar();
+
+?>
+
+
 
 <?php include_once '../templates/header.php'; ?>
 
@@ -24,7 +37,7 @@
         <div class="row mb-3">
             <div class="col">
                 <label for="asig_area"></label>
-                <select name="asig_area" id="asig_area" class="form-control" required>
+                <select name="asig_area" id="asig_area" class="form-control">
                     <option value="">SELECCIONE...</option>
                     <?php foreach ($areas as $area) : ?>
                         <option value="<?= $area['are_codigo'] ?>"> <?= $area['are_nombre'] ?></option>
