@@ -1,10 +1,6 @@
-
-
-
-
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark shadow-sm">
   <div class="container-fluid">
-    <a class="navbar-brand d-flex align-items-center" href="../../vistas/inicio/inicio.php">
+    <a class="navbar-brand d-flex align-items-center" href="../../vistas/empleado/index.php">
       <img src="../../src/images/logo.webp" alt="Logo" width="40" height="40" class="me-2">
       <span>ADMINISTRADOR</span>
     </a>
