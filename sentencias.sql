@@ -1,5 +1,6 @@
 create database empresa
 
+
 create table empleado (
     emp_codigo serial,
     emp_nombre varchar (50)not null,
@@ -8,8 +9,10 @@ create table empleado (
     emp_sexo varchar (50)not null,
     emp_nit varchar (50),
     emp_telefono integer,
+    emp_puesto integer,
     emp_situacion smallint default 1,
-    primary key (emp_codigo)
+    primary key (emp_codigo),
+    FOREIGN KEY (emp_puesto) REFERENCES puesto (pue_codigo)
 )
 
 create table puesto (

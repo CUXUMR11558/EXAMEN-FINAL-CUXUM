@@ -6,7 +6,6 @@
     require '../../includes/funciones.php';
     
     $mensaje = '';
-    $precio =  $_POST['pue_sueldo'];
     // VALIDAR INFORMACION
     $_POST['pue_nombre'] = htmlspecialchars( $_POST['pue_nombre']);
     $_POST['pue_sueldo'] = filter_var( $precio , FILTER_VALIDATE_FLOAT) ;
@@ -19,6 +18,8 @@
             'codigo' => 2
         ];
     }else{
+
+       
 
             try {
                 // REALIZAR CONSULTA

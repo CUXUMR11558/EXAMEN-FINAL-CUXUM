@@ -1,9 +1,11 @@
+
+<br><br><br><br><br><br><br><br>
 <?php
 
-    require '../../modelos/puesto.php';
+    require '../../modelos/area.php';
     
-    $_GET['pue_codigo'] = filter_var( base64_decode($_GET['pue_codigo']), FILTER_SANITIZE_NUMBER_INT);
-    $producto = new Puesto($_GET);
+    $_GET['are_codigo'] = filter_var( base64_decode($_GET['are_codigo']), FILTER_SANITIZE_NUMBER_INT);
+    $producto = new Area($_GET);
     
     try{
         
@@ -43,7 +45,7 @@ include_once '../../vistas/templates/header.php'; ?>
 </div>
 <div class="row justify-content-center">
     <div class="col-lg-6">
-        <a href="../../controladores/puesto/buscar.php" class="btn btn-primary w-100">Volver a los resultados</a>
+        <a href="../../controladores/area/buscar.php" class="btn btn-primary w-100">Volver a los resultados</a>
     </div>
 </div>
 

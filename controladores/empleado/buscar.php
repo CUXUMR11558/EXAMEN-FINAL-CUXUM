@@ -1,5 +1,4 @@
 
-
 <?php
     //  ini_set('display_errors', '1');
     //   ini_set('display_startup_errors', '1');
@@ -12,7 +11,7 @@
 
         $_GET['emp_nombre'] = htmlspecialchars( $_GET['emp_nombre']);
         $_GET['emp_apellido'] = htmlspecialchars( $_GET['emp_apellido']);
-        $_GET['emp_edad'] = htmlspecialchars( $_GET['emp_edad']);
+        $_GET['emp_edad'] = filter_var( $_GET['emp_edad'] , FILTER_SANITIZE_NUMBER_INT);
         $_GET['emp_sexo'] = htmlspecialchars( $_GET['emp_sexo']);
         $_GET['emp_nit'] = htmlspecialchars( $_GET['emp_nit']);
         $_GET['emp_telefono'] = filter_var( $_GET['emp_telefono'] , FILTER_SANITIZE_NUMBER_INT);

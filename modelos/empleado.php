@@ -58,7 +58,7 @@ class Empleado extends Conexion{
             $sql .= " AND emp_apellido like '%$this->emp_apellido%' ";
         }
         if($this->emp_nombre != ''){
-            $sql .= " AND emp_edad like '%$this->emp_edad%' ";
+            $sql .= " AND emp_edad = $this->emp_edad ";
         }
         if($this->emp_apellido != ''){
             $sql .= " AND emp_sexo like '%$this->emp_sexo%' ";
@@ -67,7 +67,7 @@ class Empleado extends Conexion{
             $sql .= " AND emp_nit like '%$this->emp_nit%' ";
         }
         if($this->emp_telefono != ''){
-            $sql .= " AND emp_telefono like '%$this->emp_telefono%' ";
+            $sql .= " AND emp_telefono = $this->emp_telefono ";
         }
         $resultado = self::servir($sql);
         return $resultado;

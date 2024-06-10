@@ -1,14 +1,17 @@
 
 
 
-
-
 <?php
 
-require '../../modelos/puesto.php';
+require '../../modelos/area.php';
 //echo var_dump($_POST);
+$_POST['are_codigo'];
 $_POST['are_nombre'] = htmlspecialchars( $_POST['are_nombre']);
 $_POST['are_observacion'] = htmlspecialchars( $_POST['are_observacion']);
+
+
+
+
 
 if($_POST['are_nombre'] == '' || $_POST['are_observacion'] == '' ){
     // ALERTA PARA VALIDAR DATOS
@@ -19,7 +22,7 @@ if($_POST['are_nombre'] == '' || $_POST['are_observacion'] == '' ){
 }else{
     try {
         // REALIZAR CONSULTA
-        $producto = new Puesto($_POST);
+        $producto = new Area($_POST);
 
 
         $modficar = $producto->modificar();

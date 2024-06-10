@@ -69,7 +69,7 @@ class Area extends Conexion{
 
         // METODO PARA MODIFICAR
         public function modificar(){
-            $sql = "UPDATE area SET are_nombre = '$this->are_nombre', are_obs ='$this->are_observacion' WHERE are_codigo ='$this->are_codigo'";
+            $sql = "UPDATE area SET are_nombre = '$this->are_nombre', are_observacion ='$this->are_observacion' WHERE are_codigo ='$this->are_codigo'";
             $resultado = $this->ejecutar($sql);
             return $resultado; 
         }
