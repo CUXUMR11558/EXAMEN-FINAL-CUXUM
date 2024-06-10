@@ -116,6 +116,30 @@ class Empleado extends Conexion
 
     }
 
+    public function MostrarPorAreas(){
+        $sql = "  SELECT 
+    emp.emp_nombre || ' ' || emp.emp_apellido AS nombre_completo, 
+    pue.pue_nombre, 
+    emp.emp_edad, 
+    emp.emp_sexo, 
+    emp.emp_nit,
+    pue.pue_sueldo, 
+    area.are_nombre 
+FROM 
+    asignacion_area asig
+INNER JOIN 
+    empleado emp ON emp.emp_codigo = asig.asig_empleado 
+  INNER JOIN 
+    area area ON asig.asig_area = area.are_codigo 
+INNER JOIN 
+    puesto pue ON emp.emp_puesto = pue.pue_codigo 
+WHERE 
+asig_situacion = 1";
+
+        $resultado =  self::servir($sql) ;
+        return $resultado;
+    }
+
 
 
 }

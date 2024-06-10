@@ -42,7 +42,10 @@ create table asignacion_area (
 )
 
 
-
+   select asig_codigo, emp_nombre || ' ' || emp_apellido AS nombre_completo, are_nombre FROM asignacion_area 
+    INNER JOIN empleado ON asig_empleado = emp_codigo
+    INNER JOIN area ON asig_area = are_codigo
+    WHERE asig_situacion = 1
 
 
 

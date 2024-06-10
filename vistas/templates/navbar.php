@@ -51,12 +51,11 @@
             <li><a class="dropdown-item" href="../../vistas/asignacion/buscar.php"><i class="bi bi-search me-2"></i>Buscar</a></li>
           </ul>
         </li>
-
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="../../vistas/organizacion/index.php">ORGANIZACION</a>
-        </li>
-
         
+
+        <li class="nav-item dropdown">
+          <a class="nav-link active" aria-current="page" href="../../controladores/organizacion/buscar.php">ORGANIZACION</a>
+        </li>
     </div>
   </div>
 </nav>
