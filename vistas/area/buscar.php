@@ -9,7 +9,7 @@
     <form action="../../controladores/area/buscar.php" method="GET" class="border bg-light shadow rounded p-4 col-lg-6">
         <div class="row mb-3">
             <div class="col">
-                <label for="cli_nombre">Nombre del Area</label>
+                <label for="are_nombre">Nombre del Area</label>
                 <input type="text" name="are_nombre" id="are_nombre" class="form-control" >
             </div>
         </div>

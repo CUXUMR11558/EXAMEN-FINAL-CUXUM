@@ -66,11 +66,11 @@ class Empleado extends Conexion
             $sql .= " AND emp_apellido like '%$this->emp_apellido%' ";
         }
 
-        if ($this->emp_nombre != '') {
+        if ($this->emp_edad != '') {
             $sql .= " AND emp_edad = $this->emp_edad ";
         }
 
-        if ($this->emp_apellido != '') {
+        if ($this->emp_sexo != '') {
             $sql .= " AND emp_sexo like '%$this->emp_sexo%' ";
         }
         if ($this->emp_nit != '') {
