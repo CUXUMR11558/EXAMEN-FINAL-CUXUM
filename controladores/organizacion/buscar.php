@@ -1,7 +1,7 @@
 
 <?php
     require '../../modelos/empleado.php';
-    include_once '../../vistas/templates/header.php';
+    
     
     try {
         $objOrganizacion = new Empleado();
@@ -28,6 +28,8 @@
     }
 
   ?>
+
+<?php include_once '../../vistas/templates/header.php';?>
 
 <h1 class="text-center">ORGANIZACION EMPRESA INGESOF S.A</h1>
 <div class="row justify-content-center">
@@ -74,4 +76,4 @@
     </div>
 </div>
 
-<?php include_once '../templates/footer.php'; ?>
+<?php include_once '../../vistas/templates/footer.php'; ?>
