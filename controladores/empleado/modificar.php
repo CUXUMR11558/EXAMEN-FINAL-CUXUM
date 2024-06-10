@@ -5,12 +5,13 @@
 <?php
 
 require '../../modelos/empleado.php';
-echo var_dump($_POST);
+
     $_POST['emp_nombre'] = htmlspecialchars( $_POST['emp_nombre']);
     $_POST['emp_codigo'] = htmlspecialchars( $_POST['emp_codigo']);
     $_POST['emp_apellido'] = htmlspecialchars( $_POST['emp_apellido']);
     $_POST['emp_nit'] = htmlspecialchars( $_POST['emp_nit']);
     $_POST['emp_telefono'] = filter_var( $_POST['emp_telefono'] , FILTER_SANITIZE_NUMBER_INT);
+    $_POST['emp_puesto'] = filter_var( $_POST['emp_puesto'] , FILTER_SANITIZE_NUMBER_INT);
 
 
 if($_POST['emp_nombre'] == '' || !$_POST['emp_apellido'] || $_POST['emp_nit'] == '' || $_POST['emp_telefono'] < 0 ){
@@ -62,8 +63,8 @@ if($_POST['emp_nombre'] == '' || !$_POST['emp_apellido'] || $_POST['emp_nit'] ==
     </div>
     <div class="row justify-content-center">
         <div class="col-lg-6">
-            <a href="../../vistas/empleado/buscar.php" class="btn btn-primary w-100">Volver al formulario</a>
-        </div>
+            <a href="../../controladores/empleado/buscar.php" class="btn btn-primary w-100">Volver al formulario</a>
+        </div>  
     </div>
 
 

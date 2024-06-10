@@ -10,14 +10,14 @@
     <form action="../../controladores/puestos/guardar.php" method="POST" class="border bg-light shadow rounded p-4 col-lg-6">
         <div class="row mb-3">
             <div class="col">
-                <label for="cli_nombre">Nombre del puesto</label>
+                <label for="pue_nombre">Nombre del puesto</label>
                 <input type="text" name="pue_nombre" id="pue_nombre" class="form-control" required>
             </div>
         </div>
        
         <div class="row mb-3">
             <div class="col">
-                <label for="cli_nit">Sueldo</label>
+                <label for="pue_sueldo">Sueldo</label>
                 <input type="number" name="pue_sueldo" id="pue_sueldo" step="1" class="form-control" required>
             </div>
         </div>

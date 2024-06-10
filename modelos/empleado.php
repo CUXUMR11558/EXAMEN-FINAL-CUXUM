@@ -2,7 +2,8 @@
 
 require_once 'Conexion.php';
 
-class Empleado extends Conexion{
+class Empleado extends Conexion
+{
     public $emp_codigo;
     public $emp_nombre;
     public $emp_apellido;
@@ -10,6 +11,7 @@ class Empleado extends Conexion{
     public $emp_sexo;
     public $emp_nit;
     public $emp_telefono;
+    public $emp_puesto;
     public $emp_situacion;
 
 
@@ -22,12 +24,14 @@ class Empleado extends Conexion{
         $this->emp_sexo = $args['emp_sexo'] ?? '';
         $this->emp_nit = $args['emp_nit'] ?? '';
         $this->emp_telefono = $args['emp_telefono'] ?? '';
+        $this->emp_puesto = $args['emp_puesto'] ?? '';
         $this->emp_situacion = $args['emp_situacion'] ?? 1;
     }
 
     // METODO PARA INSERTAR
 
-    public static function buscarTodos(...$columnas){
+    public static function buscarTodos(...$columnas)
+    {
         // $cols = '';
         // if(count($columnas) > 0){
         //     $cols = implode(',', $columnas) ;
@@ -39,71 +43,76 @@ class Empleado extends Conexion{
         $resultado = self::servir($sql);
         return $resultado;
     }
-    public function guardar(){
-        $sql = "INSERT into empleado (emp_nombre, emp_apellido, emp_edad, emp_sexo, emp_nit, emp_telefono) values ('$this->emp_nombre','$this->emp_apellido','$this->emp_edad','$this->emp_sexo','$this->emp_nit','$this->emp_telefono')";
+    public function guardar()
+    {
+        $sql = "INSERT into empleado (emp_nombre, emp_apellido, emp_edad, emp_sexo, emp_nit, emp_telefono, emp_puesto) values ('$this->emp_nombre','$this->emp_apellido','$this->emp_edad','$this->emp_sexo','$this->emp_nit','$this->emp_telefono','$this->emp_puesto')";
+
         $resultado = $this->ejecutar($sql);
-        return $resultado; 
+        return $resultado;
     }
 
-      // METODO PARA CONSULTAR
+    // METODO PARA CONSULTAR
 
-    public function buscar(...$columnas){
+    public function buscar(...$columnas)
+    {
         $cols = count($columnas) > 0 ? implode(',', $columnas) : '*';
         $sql = "SELECT $cols FROM empleado where emp_situacion = 1 ";
 
-        if($this->emp_nombre != ''){
+        if ($this->emp_nombre != '') {
             $sql .= " AND emp_nombre like '%$this->emp_nombre%' ";
         }
-        if($this->emp_apellido != ''){
+     
+        if ($this->emp_apellido != '') {
             $sql .= " AND emp_apellido like '%$this->emp_apellido%' ";
         }
-        if($this->emp_nombre != ''){
+
+        if ($this->emp_nombre != '') {
             $sql .= " AND emp_edad = $this->emp_edad ";
         }
-        if($this->emp_apellido != ''){
+
+        if ($this->emp_apellido != '') {
             $sql .= " AND emp_sexo like '%$this->emp_sexo%' ";
         }
-        if($this->emp_nit != ''){
+        if ($this->emp_nit != '') {
             $sql .= " AND emp_nit like '%$this->emp_nit%' ";
         }
-        if($this->emp_telefono != ''){
+        if ($this->emp_telefono != '') {
             $sql .= " AND emp_telefono = $this->emp_telefono ";
         }
         $resultado = self::servir($sql);
         return $resultado;
     }
 
-    public function buscarPorId($id){
-     
+    public function buscarPorId($id)
+    {
+
         $sql = "SELECT * FROM empleado where emp_situacion = 1 and emp_codigo = $id ";
-        $resultado = array_shift( self::servir($sql));
+        $resultado = array_shift(self::servir($sql));
         // $resultado = self::servir($sql)[0];
         return $resultado;
     }
 
-        // METODO PARA MODIFICAR
-        public function modificar(){
-            $sql = "UPDATE empleado SET emp_nombre = '$this->emp_nombre', emp_apellido ='$this->emp_apellido', emp_edad = '$this->emp_edad', emp_sexo ='$this->emp_sexo', emp_nit = '$this->emp_nit', emp_telefono = '$this->emp_telefono' WHERE emp_codigo ='$this->emp_codigo'";
-            $resultado = $this->ejecutar($sql);
-            return $resultado; 
-        }
-   
+    // METODO PARA MODIFICAR
+    public function modificar()
+    {
+        $sql = "UPDATE empleado SET emp_nombre = '$this->emp_nombre', emp_apellido ='$this->emp_apellido', emp_edad = '$this->emp_edad', emp_sexo ='$this->emp_sexo', emp_nit = '$this->emp_nit', emp_telefono = '$this->emp_telefono' , emp_puesto ='$this->emp_puesto' WHERE emp_codigo ='$this->emp_codigo'";
+        $resultado = $this->ejecutar($sql);
+        return $resultado;
+    }
 
 
-    public function eliminar(){
+
+    public function eliminar()
+    {
         // $sql = "DELETE FROM productos WHERE prod_id = $this->prod_id ";
 
         // echo $sql;
         $sql = "UPDATE empleado SET emp_situacion = 0 WHERE emp_codigo = $this->emp_codigo ";
         $resultado = $this->ejecutar($sql);
-        return $resultado; 
+        return $resultado;
+
     }
 
 
 
-
-
-    
-    
-    
 }

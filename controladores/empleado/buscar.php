@@ -1,4 +1,9 @@
 
+
+
+
+
+<br><br><br><br><br>
 <?php
     //  ini_set('display_errors', '1');
     //   ini_set('display_startup_errors', '1');
@@ -6,15 +11,18 @@
     require '../../modelos/empleado.php';
 
     // consulta
+    
+    
+    //var_dump($_GET);
     try {
-       //var_dump($_GET);
+      
 
         $_GET['emp_nombre'] = htmlspecialchars( $_GET['emp_nombre']);
         $_GET['emp_apellido'] = htmlspecialchars( $_GET['emp_apellido']);
         $_GET['emp_edad'] = filter_var( $_GET['emp_edad'] , FILTER_SANITIZE_NUMBER_INT);
         $_GET['emp_sexo'] = htmlspecialchars( $_GET['emp_sexo']);
-        $_GET['emp_nit'] = htmlspecialchars( $_GET['emp_nit']);
-        $_GET['emp_telefono'] = filter_var( $_GET['emp_telefono'] , FILTER_SANITIZE_NUMBER_INT);
+
+
         $objCliente = new Empleado($_GET);
         $clientes = $objCliente->buscar();
         $resultado = [
@@ -30,7 +38,7 @@
             'detalle' => $e->getMessage(),
             'codigo' => 0
         ];
-     
+       
     }       
 
 
@@ -61,6 +69,7 @@
                         <th>sexo</th>
                         <th>NIT</th>
                         <th>Teléfono</th>
+                        <th>Puesto</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -74,6 +83,7 @@
                                 <td><?= $cliente['emp_sexo'] ?></td>
                                 <td><?= $cliente['emp_nit'] ?></td>
                                 <td><?= $cliente['emp_telefono'] ?></td>
+                                <td><?= $cliente['emp_puesto'] ?></td>
                                 <td class="text-center">
                                 <div class="dropdown">
                                     <button class="btn btn-info dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">

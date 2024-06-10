@@ -15,13 +15,6 @@
         </div>
         <div class="row mb-3">
             <div class="col">
-                <label for="cli_apellido">Observaciones Area</label>
-                <input type="text" name="are_obs" id="are_obs" class="form-control" >
-            </div>
-        </div>
-        
-        <div class="row mb-3">
-            <div class="col">
                 <button type="submit" class="btn btn-info w-100"><i class="bi bi-search me-2"></i>Buscar</button>
             </div>
         </div>

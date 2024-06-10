@@ -51,6 +51,7 @@ class Puesto extends Conexion{
             $sql .= " AND pue_sueldo = $this->pue_sueldo ";
         }
        
+
         $resultado = self::servir($sql);
         return $resultado;
     }

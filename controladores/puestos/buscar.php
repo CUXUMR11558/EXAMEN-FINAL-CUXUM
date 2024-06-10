@@ -10,7 +10,7 @@
        //var_dump($_GET);
 
         $_GET['pue_nombre'] = htmlspecialchars( $_GET['pue_nombre']);
-        $_GET['pue_sueldo'] = filter_var( $precio , FILTER_VALIDATE_FLOAT) ;
+        $_GET['pue_sueldo'] = filter_var($_GET['pue_sueldo'], FILTER_VALIDATE_FLOAT) ;
         
         $objCliente = new Puesto($_GET);
         $clientes = $objCliente->buscar();

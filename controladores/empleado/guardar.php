@@ -5,17 +5,17 @@
     require '../../modelos/empleado.php';
     require '../../includes/funciones.php';
     
-    $mensaje = '';
-    // VALIDAR INFORMACION
+
     $_POST['emp_nombre'] = htmlspecialchars( $_POST['emp_nombre']);
     $_POST['emp_apellido'] = htmlspecialchars( $_POST['emp_apellido']);
-    $_POST['emp_edad'] = htmlspecialchars( $_POST['emp_edad']);
+    $_POST['emp_edad'] = filter_var( $_POST['emp_edad'], FILTER_VALIDATE_INT);
     $_POST['emp_sexo'] = htmlspecialchars( $_POST['emp_sexo']);
-    $_POST['emp_nit'] = htmlspecialchars( $_POST['emp_nit']);
+    $_POST['emp_nit'] = filter_var( $_POST['emp_nit'], FILTER_VALIDATE_INT);
+    $_POST['emp_puesto'] = filter_var( $_POST['emp_puesto'], FILTER_VALIDATE_INT);
     $_POST['emp_telefono'] = filter_var( $_POST['emp_telefono'] , FILTER_SANITIZE_NUMBER_INT);
     
     
-    if($_POST['emp_nombre'] == '' || $_POST['emp_apellido'] == '' || $_POST['emp_edad'] == '' || $_POST['emp_sexo'] == '' || $_POST['emp_nit'] == '' || $_POST['emp_telefono'] == '' || strlen($_POST['emp_telefono']) < 8){
+    if($_POST['emp_nombre'] == '' || $_POST['emp_apellido'] == '' || $_POST['emp_edad'] == '' || $_POST['emp_sexo'] == '' || $_POST['emp_nit'] == '' || $_POST['emp_telefono'] == '' || $_POST['emp_telefono'] < 8){
         // ALERTA PARA VALIDAR DATOS
         $resultado = [
             'mensaje' => 'DEBE VALIDAR LOS DATOS',

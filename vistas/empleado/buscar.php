@@ -7,38 +7,30 @@
     <form action="../../controladores/empleado/buscar.php" method="GET" class="border bg-light shadow rounded p-4 col-lg-6">
         <div class="row mb-3">
             <div class="col">
-                <label for="cli_nombre">Nombre del empleado</label>
+                <label for="emp_nombre">Nombre del empleado</label>
                 <input type="text" name="emp_nombre" id="emp_nombre" class="form-control" >
             </div>
         </div>
         <div class="row mb-3">
             <div class="col">
-                <label for="cli_apellido">Apellido del empleado</label>
+                <label for="emp_apellido">Apellido del empleado</label>
                 <input type="text" name="emp_apellido" id="emp_apellido" class="form-control" >
             </div>
         </div>
         <div class="row mb-3">
             <div class="col">
-                <label for="cli_nit">Edad del Empleado</label>
+                <label for="emp_nit">Edad del Empleado</label>
                 <input type="number" name="emp_edad" id="emp_edad" step="1" class="form-control">
             </div>
         </div>
         <div class="row mb-3">
             <div class="col">
-                <label for="cli_telefono">Sexo del Empleado</label>
-                <input type="text" name="emp_sexo" id="emp_sexo" step="1" class="form-control">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col">
-                <label for="cli_nit">NIT del empleado</label>
-                <input type="number" name="emp_nit" id="emp_nit" step="1" class="form-control" >
-            </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col">
-                <label for="cli_telefono">Teléfono del empleado</label>
-                <input type="tel" name="emp_telefono" id="emp_telefono" step="1" class="form-control" >
+                <label for="emp_sexo">Sexo del Empleado</label>
+                <select name="emp_sexo" id="emp_sexo" class="form-control" >
+                    <option value="">Seleccione</option>
+                    <option value="Masculino">Masculino</option>
+                    <option value="Femenino">Femenino</option>
+                </select>
             </div>
         </div>
         <div class="row mb-3">
