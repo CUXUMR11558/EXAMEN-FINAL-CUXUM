@@ -50,7 +50,7 @@
         </div>
         <div class="row">
             <div class="col">
-                <a href="../../controladores/puesto/buscar.php" class="btn btn-info w-100">CANCELAR</a>
+                <a href="../../controladores/puestos/buscar.php" class="btn btn-info w-100">CANCELAR</a>
             </div>
         </div>
     </form>
